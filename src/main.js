@@ -2,7 +2,11 @@ import Vue from 'vue'
 import App from './App'
 import VueRouter from 'vue-router'
 
-Vue.use(VueRouter)
+import ElementUI from 'element-ui'
+import 'element-ui/lib/theme-default/index.css'
+
+Vue.use(VueRouter) //引入路由
+Vue.use(ElementUI) //引入element-ui
 
 const Home = {
     template:'<div>Home Page</div>',
@@ -12,6 +16,7 @@ const Home = {
         console.dir(to)
         console.dir(from)
         console.dir(next)
+        next()
     }
 }
 const List = {template:'<div>List Page</div>'}

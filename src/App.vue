@@ -2,6 +2,9 @@
   <div id="app">
     <img src="./assets/logo.png">
     <hello></hello>
+    <i class="el-icon-delete"></i>
+    <el-button type="primary" icon="search">搜索</el-button>
+    <a href="#/home"><i class="el-icon-edit"></i>首页</a>
     <router-link to='/home'>Home</router-link>
     <router-link to='/list'>List</router-link>
      <div class="cantainer">
