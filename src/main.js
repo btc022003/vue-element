@@ -5,6 +5,8 @@ import VueRouter from 'vue-router'
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 
+import  List from './components/List'
+
 Vue.use(VueRouter) //引入路由
 Vue.use(ElementUI) //引入element-ui
 
@@ -19,7 +21,7 @@ const Home = {
         next()
     }
 }
-const List = {template:'<div>List Page</div>'}
+//const List = {template:'<div>List Page</div>'}
 
 const routes = [
     {path:'/home',component:Home},
