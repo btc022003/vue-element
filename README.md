@@ -1,6 +1,6 @@
-# app-demo
+# vue-element
 
-> A Vue.js project
+> A Vue.js project with element-ui....使用vue.js结合element实现一些简单的效果
 
 ## Build Setup
 
