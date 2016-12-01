@@ -1,13 +1,13 @@
 <template>
     <div>
-        <el-col :span="8" v-for="(o, index) in 2" :offset="index > 0 ? 2 : 0">
-            <el-card :body-style="{ padding: '0px' }">
-                <img src="http://element.eleme.io/static/hamburger.50e4091.png" class="image">
+        <el-col :span="8" v-for="(book, index) in listBook">
+            <el-card :body-style="{ padding: '0px'}" style="height:300px;">
+                <img :src="book.img" class="image">
                 <div style="padding: 14px;">
-                    <span>好吃的汉堡</span>
+                    <span>{{book.title}}</span>
                     <div class="bottom clearfix">
-                        <time class="time">{{ currentDate }}</time>
-                        <el-button type="text" class="button" @click="clickHandle">操作按钮</el-button>
+                        <time class="time">{{ book.author }}</time>
+                        <el-button type="text" class="button" @click="clickHandle(book)">操作按钮</el-button>
                     </div>
                 </div>
             </el-card>
@@ -15,21 +15,30 @@
     </div>
 </template>
 <script>
+    import $ from 'jquery'
     export default{
         data(){
             return{
-                currentDate:new Date().toLocaleDateString()
+                currentDate:new Date().toLocaleDateString(),
+                listBook:[]
             }
         },
-        beforeRouterEnter(to,from,next){
-            console.dir(to)
+        beforeRouteEnter(to,from,next){
             next()
         },
+        created(){
+            console.dir(this)
+            //this.$route可以获取传递的参数
+            var app = this
+            $.getJSON('http://btc022003.github.io/dangdang-app-angularjs/data/book_ertong.json').then(res=>{
+                app.listBook = res
+            })
+        },
         methods:{
-            clickHandle(){
+            clickHandle(book){
                 this.$notify({
                     title:'提示',
-                    message:'看起来很不错的汉堡'
+                    message:book.title
                 })
             }
         }
