@@ -26,7 +26,7 @@
         beforeRouteEnter(to,from,next){
             next()
         },
-        created(){
+        created(){//组件创建完成后执行
             console.dir(this)
             //this.$route可以获取传递的参数
             console.dir(this.$route.query.type)
@@ -41,8 +41,8 @@
         },
         methods:{
             clickHandle(book){
-                this.$notify({
-                    title:'提示',
+                this.$message({
+                    type:'success',
                     message:book.title
                 })
             },
