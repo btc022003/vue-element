@@ -29,16 +29,27 @@
         created(){
             console.dir(this)
             //this.$route可以获取传递的参数
-            var app = this
-            $.getJSON('http://btc022003.github.io/dangdang-app-angularjs/data/book_ertong.json').then(res=>{
-                app.listBook = res
-            })
+            console.dir(this.$route.query.type)
+            this.fetchData()
+        },
+        watch:{
+            //路由地址改变后获取数据
+            $route:function(){
+                console.log('地址改变了')
+                this.fetchData()
+            }
         },
         methods:{
             clickHandle(book){
                 this.$notify({
                     title:'提示',
                     message:book.title
+                })
+            },
+            fetchData(){ 
+                var app = this
+                $.getJSON('http://btc022003.github.io/dangdang-app-angularjs/data/book_'+this.$route.query.type+'.json').then(res=>{
+                    app.listBook = res
                 })
             }
         }

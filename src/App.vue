@@ -6,7 +6,9 @@
     <el-button type="primary" icon="search">搜索</el-button>
     <a href="#/home"><i class="el-icon-edit"></i>首页</a>
     <router-link to='/home'>Home</router-link>
-    <router-link to='/list'>List</router-link>
+    <router-link to='/list?type=ertong'>List-儿童</router-link>
+    <router-link to='/list?type=dongman'>List-动漫</router-link>
+    <router-link to='/list?type=qingchunwenxue'>List-青春文学</router-link>
      <div class="cantainer">
          <router-view></router-view>
     </div>
