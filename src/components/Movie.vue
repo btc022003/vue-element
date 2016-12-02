@@ -73,5 +73,6 @@ export default{
     position:fixed;
     top:15px;
     right:5px;
+    width:200px;
 }
 </style>

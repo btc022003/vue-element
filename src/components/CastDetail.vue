@@ -13,10 +13,19 @@
             }
         },
         created(){
-            var app =this
             console.log(this.$route.params.id)
-            $.getJSON('http://api.douban.com/v2/movie/celebrity/1054452?callback=?')
-                .then(res=>app.detail=res)
+            this.fetchData()
+        },
+        watch:{
+            '$route':'fetchData'
+        },
+        methods:{
+            fetchData(){
+                this.detail = {}
+                var app =this
+                $.getJSON('http://api.douban.com/v2/movie/celebrity/'+this.$route.params.id+'?callback=?')
+                    .then(res=>app.detail=res)
+            }
         }
     }
 </script>
