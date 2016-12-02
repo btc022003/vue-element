@@ -65,6 +65,7 @@ export default{
 .list-casts li{
     float:left;
     margin-left:10px;
+    text-align:center;
 }
 .list-casts h5{
     margin:0;
