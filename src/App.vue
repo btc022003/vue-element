@@ -16,6 +16,7 @@
                     </el-menu-item>
                 </el-submenu>
                 <el-menu-item index="2"><a href="#/home">首页</a></el-menu-item>
+                <el-menu-item index="3"><a href="#/movie">豆瓣电影</a></el-menu-item>
             </el-menu>
         </el-col>
         <el-col :span="20">

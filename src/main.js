@@ -6,6 +6,7 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-default/index.css'
 
 import  List from './components/List'
+import Movie from './components/Movie'
 
 Vue.use(VueRouter) //引入路由
 Vue.use(ElementUI) //引入element-ui
@@ -25,7 +26,9 @@ const Home = {
 
 const routes = [
     {path:'/home',component:Home},
-    {path:'/list',component:List}
+    {path:'/list',component:List},
+    {path:'/movie',component:Movie},
+    {path:'*',component:Home}
 ]
 const router = new VueRouter({
     routes

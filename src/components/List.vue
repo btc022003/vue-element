@@ -1,6 +1,7 @@
 <template>
     <div>
-        <el-col :span="8" v-for="(book, index) in listBook">
+        <el-row :gutter="15">
+        <el-col :span="18" :offset="1" v-for="(book, index) in listBook">
             <el-card :body-style="{ padding: '0px'}" style="height:300px;">
                 <img :src="book.img" class="image">
                 <div style="padding: 14px;">
@@ -12,6 +13,7 @@
                 </div>
             </el-card>
         </el-col>
+        </el-row>
     </div>
 </template>
 <script>
