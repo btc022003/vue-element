@@ -13,13 +13,16 @@
                 </div>
                 <ul class="list-casts">
                     <li v-for="item in movie.casts">
-                        <img :src="item.avatars.large" :alt="item.alt">
+                        <router-link :to="{name:'castDetail',params:{id:item.id}}"><img :src="item.avatars.large" :alt="item.alt"></router-link>
                         <h5>{{item.name}}</h5>
                     </li>
                 </ul>
             </el-card>
         </el-col>
         </el-row>
+         <div class="fixed-detail">
+             <router-view></router-view>
+        </div>
     </div>
 
 </template>
@@ -33,6 +36,9 @@ export default{
     },
     created(){
         var app = this
+        if(this.movieList.length>0){
+            return false
+        }
         $.getJSON('http://api.douban.com/v2/movie/in_theaters?callback=?')
             .then(res=>app.movieList=res.subjects)
     },
@@ -62,5 +68,10 @@ export default{
 }
 .list-casts h5{
     margin:0;
+}
+.fixed-detail{
+    position:fixed;
+    top:15px;
+    right:5px;
 }
 </style>

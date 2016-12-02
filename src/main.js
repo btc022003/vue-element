@@ -7,7 +7,7 @@ import 'element-ui/lib/theme-default/index.css'
 
 import  List from './components/List'
 import Movie from './components/Movie'
-
+import CastDetail from './components/CastDetail'
 Vue.use(VueRouter) //引入路由
 Vue.use(ElementUI) //引入element-ui
 
@@ -27,7 +27,12 @@ const Home = {
 const routes = [
     {path:'/home',component:Home},
     {path:'/list',component:List},
-    {path:'/movie',component:Movie},
+    //设置子路由 在页面内部渲染
+    {path:'/movie',component:Movie,
+        children:[
+            {name:'castDetail',path:'/cast_detail/:id',component:CastDetail}
+        ]
+    },
     {path:'*',component:Home}
 ]
 const router = new VueRouter({
