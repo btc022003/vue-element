@@ -21,3 +21,6 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 [element-ui](http://element.eleme.io/)  
 [vue-router](http://router.vuejs.org/)  
 
+通过插件实现页面导航,使用局部路由实现局部刷新  
+
+
