@@ -23,4 +23,22 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 通过插件实现页面导航,使用局部路由实现局部刷新  
 
+```javascript
+//路由信息配置'./src/main.js'
+//通过设置Childern节点实现
+const routes = [
+    {path:'/home',component:Home},
+    {path:'/list',component:List},
+    //设置子路由 在页面内部渲染
+    {path:'/movie',component:Movie,
+        children:[
+            {name:'castDetail',path:'/cast_detail/:id',component:CastDetail}
+        ]
+    },
+    {path:'*',component:Home}
+]
+
+```
+
+局部路由部分查看组件页面'./src/components/Movie.vue'
 
