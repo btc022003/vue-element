@@ -18,6 +18,7 @@
 </template>
 <script>
     import $ from 'jquery'
+    import api from '../services/api'
     export default{
         data(){
             return{
@@ -32,7 +33,7 @@
             console.dir(this)
             //this.$route可以获取传递的参数
             console.dir(this.$route.query.type)
-            this.fetchData()
+            this.fetchData(type)
         },
         watch:{
             //路由地址改变后获取数据
@@ -49,10 +50,11 @@
                 })
             },
             fetchData(){ 
-                var app = this
-                $.getJSON('http://btc022003.github.io/dangdang-app-angularjs/data/book_'+this.$route.query.type+'.json').then(res=>{
-                    app.listBook = res
-                })
+                //var app = this
+                //$.getJSON('http://btc022003.github.io/dangdang-app-angularjs/data/book_'+this.$route.query.type+'.json').then(res=>{
+                //    app.listBook = res
+                //})
+                this.listBook = api.getData()
             }
         }
     }

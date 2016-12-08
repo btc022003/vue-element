@@ -12,7 +12,7 @@ Vue.use(VueRouter) //引入路由
 Vue.use(ElementUI) //引入element-ui
 
 const Home = {
-    template:'<div>Home Page</div>',
+    template:'<div>----Home Page</div>',
     //路由进入之前 获取传递的参数
     //to.query中是url传递的参数
     beforeRouteEnter(to,from,next){
